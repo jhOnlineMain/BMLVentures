@@ -24,6 +24,8 @@ a {
 
 .nav ul li a {
   text-decoration: none;
+  font-weight: bold;
+  color: #333;
   padding: 0.2em 1.1em;
   border-right: 1px solid black;
   margin: 0 0 0 -6px;
@@ -36,6 +38,14 @@ a {
 .nav ul li a:hover {
   background: rgba(255, 255, 255, 0.8);
   color: #1a1a1a;
+}
+
+.video {
+  height:50vh;
+}
+
+footer {
+  flex-flow: column-reverse;
 }
 
 /*Pre existing css */

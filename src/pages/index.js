@@ -1,13 +1,13 @@
 import * as React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../components/index.module.css"
 import Video from "../components/video"
 import FeatureImage from "../components/featureImage"
 import removeTags from "../functions"
+import ContactForm from "../components/contactForm"
 
 
 
@@ -57,7 +57,8 @@ return (
     <div className="hook"><h3>{hook}</h3></div>
     <div className="explain"></div><p>{explain}</p>
     
-    </section>  
+    </section>
+    <ContactForm/>
   </Layout>
 )
 }

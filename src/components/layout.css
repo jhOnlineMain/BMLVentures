@@ -1,8 +1,20 @@
 /*Ordinary CSS */
 
-.header-wrap {
+
+
+section.intro {
+  display: grid;
+  grid-template-columns:44% 12% 44%;
+  grid-template-rows: auto;
+  padding:2% 4% 2% 4%;
+  background-color:ivory;
+  border-top: 2px groove whitesmoke;  
+    
+}
+div.header-wrap {
   background-color: whitesmoke;
   height: 15vh;
+  border-bottom: 4px solid #C7804C
 
 }
 

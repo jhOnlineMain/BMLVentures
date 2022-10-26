@@ -7,6 +7,7 @@ import Seo from "../components/seo"
 import * as styles from "../components/index.module.css"
 import Video from "../components/video"
 import FeatureImage from "../components/featureImage"
+import removeTags from "../functions"
 
 
 
@@ -16,17 +17,32 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
 const IndexPage = () => {
   const IndexData = useStaticQuery(graphql`
     query IndexQuery {
-        allWpPage {
+        allWpPost{
             nodes {
                 title
                 id
                 slug
-                link
+                content
             }
         }
     }
     `)
-console.log(IndexData)    
+
+  let hook,explain = "";    
+  for (const item of IndexData.allWpPost.nodes ) {
+
+  if (item.slug == "home-intro-hook") {
+    
+    hook = item.content
+    hook = removeTags(hook)
+  }
+  else {
+    explain = item.content
+    explain = removeTags(explain)
+  }
+  
+}
+ 
 return (    
   <Layout>
   <Seo title="Home" />
@@ -36,11 +52,12 @@ return (
     videoTitle="Placeholder drone footage"
   />  
     </div> */}
-  {<FeatureImage/>}
-  {/* <section className="introduction">
-    {IndexData.allWpPage.nodes.title['Home-intro-hook']}
+  <FeatureImage/>
+  <section className="intro">
+    <div className="hook"><h3>{hook}</h3></div>
+    <div className="explain"></div><p>{explain}</p>
     
-    </section>   */}
+    </section>  
   </Layout>
 )
 }

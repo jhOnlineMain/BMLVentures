@@ -5,8 +5,6 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../components/index.module.css"
 import Video from "../components/video"
-import FeatureImage from "../components/featureImage"
-import removeTags from "../functions"
 import ContactForm from "../components/contactForm"
 
 

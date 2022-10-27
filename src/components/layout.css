@@ -1,10 +1,12 @@
 /*Ordinary CSS */
 
+/* Header */
+
 .banner-wrap img {
-  width:'100%';
-  height:'40vh';
-  object-fit:'cover';
-  opacity:'0.9'
+  width:100%;
+  height:40vh;
+  object-fit:cover;
+  opacity:0.9
 }
 section.intro {
   display: grid;
@@ -56,13 +58,38 @@ a {
   color: #1a1a1a;
 }
 
-.video {
-  height:50vh;
-}
+/*Footer*/
 
 footer {
-  flex-flow: column-reverse;
+  background-color:#c6824b;
+  margin-top: 'var(--space-5)';
+  font-size: 'var(--font-sm)';
+  height: '30vh';
 }
+.credit-wrap {
+  display:flex;
+  align-items: center;
+}
+.ordinary-badge {
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 50% 50%;
+ align-content: center;
+ margin: 0 auto;
+ padding: 8vh 0;
+}
+
+.badge-text {
+  text-align: center;
+  font-weight: bold;
+  margin:auto 0;
+  padding-right: 1rem;
+
+}
+.ordinary-badge a {
+text-transform:none;
+}
+
 
 /*Pre existing css */
 :root {

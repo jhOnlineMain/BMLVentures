@@ -5,7 +5,6 @@ const FeatureImage = (imageSrcUrl) => {
 return (
 <StaticImage
     className="feature-image"
-    src="../images/BMLV-excavation-placeholder.jpg"
     style={{
         width:'100%',
         height:'40vh',

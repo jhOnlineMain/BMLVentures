@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../components/index.module.css"
@@ -15,50 +15,50 @@ import ContactForm from "../components/contactForm"
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
 const IndexPage = () => {
-  const IndexData = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query IndexQuery {
-        allWpPost{
-            nodes {
-                title
-                id
-                slug
-                content
-            }
+      wpPage {
+        home {
+          introExplain
+          introHook
+          bannerImage {
+          width
+          altText
+          localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
+      }
+        }
+      }
     }
-    `)
-
-  let hook,explain = "";    
-  for (const item of IndexData.allWpPost.nodes ) {
-
-  if (item.slug == "home-intro-hook") {
-    
-    hook = item.content
-    hook = removeTags(hook)
-  }
-  else {
-    explain = item.content
-    explain = removeTags(explain)
-  }
-  
-}
- 
+  `)
+  const home = data.wpPage.home
+  const image = getImage(home.bannerImage.localFile)
+  console.log(image)
 return (    
   <Layout>
   <Seo title="Home" />
-  {/* <div className="video-wrap">
-  <Video
-    videoSrcURL="https://www.youtube.com/watch?v=1ME0hmW6SLM"
-    videoTitle="Placeholder drone footage"
-  />  
-    </div> */}
-  <FeatureImage/>
+  <section className="banner-wrap">
+    <GatsbyImage
+      className="feature-image"  
+      image={image}
+      alt={home.bannerImage.altText}
+      width={home.bannerImage.width}
+      style={{
+        width:'100%',
+        height:'60vh',
+        objectFit:'cover',
+        opacity:'0.9'
+      }}
+    />
+  </section>
   <section className="intro">
-    <div className="hook"><h3>{hook}</h3></div>
-    <div className="explain"></div><p>{explain}</p>
-    
-    </section>
-    <ContactForm/>
+    <div className="hook"><h3>{data.wpPage.home.introHook}</h3></div>
+    <div className="explain"></div><p>{data.wpPage.home.introExplain}</p>
+  </section>
+  {/* <ContactForm/> */}
   </Layout>
 )
 }

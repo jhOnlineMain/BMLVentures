@@ -44,17 +44,15 @@ return (
       image={image}
       alt={home.bannerImage.altText}
       width={home.bannerImage.width}
-      style={{
-        width:'100%',
-        height:'60vh',
-        objectFit:'cover',
-        opacity:'0.9'
-      }}
     />
   </section>
   <section className="intro">
-    <div className="hook"><h3>{data.wpPage.home.introHook}</h3></div>
-    <div className="explain"></div><p>{data.wpPage.home.introExplain}</p>
+    <div className="hook">
+      <h3>{data.wpPage.home.introHook}</h3>
+    </div>
+    <div className="explain">
+      <p>{data.wpPage.home.introExplain}</p>
+    </div>  
   </section>
   {/* <ContactForm/> */}
   </Layout>

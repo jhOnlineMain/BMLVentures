@@ -8,15 +8,6 @@
   object-fit:cover;
   opacity:0.9
 }
-section.intro {
-  display: grid;
-  grid-template-columns:44% 12% 44%;
-  grid-template-rows: auto;
-  padding:2% 4% 2% 4%;
-  background-color:ivory;
-  border-top: 2px groove whitesmoke;  
-    
-}
 div.header-wrap {
   background-color: whitesmoke;
   height: 15vh;
@@ -58,15 +49,45 @@ a {
   color: #1a1a1a;
 }
 
+/* Index/Home */
+
+.feature-image {
+  width:100%;
+  object-fit:cover;
+  opacity:0.9
+}
+
+section.intro {
+  display: grid;
+  grid-template-columns:44% 12% 44%;
+  grid-template-rows: auto; 
+  /* display: flex;
+  flex-flow:row; */
+  padding:2% 4%;
+  background-color:ivory;
+  border-top: 2px groove whitesmoke;  
+    
+}
+.intro .hook {
+  order:1
+}
+
+.intro .explain {
+  min-width: 40em;
+  margin: 0 0 0 10em;
+  order: 2;
+  height: auto;
+}
+
 /*Footer*/
 
 footer {
   background-color:#c6824b;
-  margin-top: 'var(--space-5)';
-  font-size: 'var(--font-sm)';
-  height: '30vh';
+  margin-top: var(--space-5);
+  font-size: var(--font-sm);
+  height: auto;
 }
-.credit-wrap {
+.badge-wrap {
   display:flex;
   align-items: center;
 }
@@ -76,7 +97,9 @@ footer {
   grid-template-columns: 50% 50%;
  align-content: center;
  margin: 0 auto;
- padding: 8vh 0;
+}
+#ordinaryLogo {
+  object-fit: scale-down;
 }
 
 .badge-text {

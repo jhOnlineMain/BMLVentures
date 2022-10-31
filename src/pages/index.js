@@ -37,7 +37,7 @@ const IndexPage = () => {
   console.log(image)
 return (    
   <Layout>
-  <Seo title="Home" />
+
   <section className="banner-wrap">
     <GatsbyImage
       className="feature-image"  
@@ -46,6 +46,7 @@ return (
       width={home.bannerImage.width}
     />
   </section>
+
   <section className="intro">
     <div className="hook">
       <h3>{data.wpPage.home.introHook}</h3>
@@ -54,6 +55,7 @@ return (
       <p>{data.wpPage.home.introExplain}</p>
     </div>  
   </section>
+
   {/* <ContactForm/> */}
   </Layout>
 )

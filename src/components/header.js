@@ -27,6 +27,7 @@ const Header = () => (
         />
       </Link>
     </section>
+
     <section className="nav-wrap">
       <nav className="nav">
         <ul>
@@ -40,9 +41,9 @@ const Header = () => (
             <Link to="/contact">GET IN TOUCH</Link>
           </li>
         </ul>
-
-      </nav>
+     </nav>
     </section>
+    
   </header>
 </div>
 )

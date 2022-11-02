@@ -18,19 +18,27 @@ return (
     }}
 >
     <Fragment>
+
       <div className="tile">
       <Link to={props.tileLink}>
+
         <GatsbyImage
           image={props.tileImage}
           alt={props.tileImageAlt}
           width={200}
-          aspectRatio={1/1}
-          />
-        <Link to={props.tileLink}> <label> {props.tileLabel} </label></Link>
+          aspectRatio={4/3}
+        />
+
+        <Link to={props.tileLink}> 
+          <label> {props.tileLabel} </label>
+        </Link>
+
       </Link>
       </div>
+
     </Fragment>
-  </section>
+
+</section>
 )
 }
 export default LinkTile

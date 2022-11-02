@@ -6,6 +6,8 @@ import Seo from "../components/seo"
 import * as styles from "../components/index.module.css"
 import Video from "../components/video"
 import ContactForm from "../components/contactForm"
+import LinkTile from "../components/linkTile"
+import LinkTileGrid from "../components/linkTileGrid"
 
 
 
@@ -14,34 +16,48 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
-    query IndexQuery {
-      wpPage {
-        home {
-          introExplain
-          introHook
-          bannerImage {
-          width
-          altText
-          localFile {
+   query IndexQuery {
+    wpPage(slug: {eq: "home"}) {
+    home {
+      introExplain
+      introHook
+      bannerImage {
+        width
+        altText
+        localFile {
           childImageSharp {
             gatsbyImageData
           }
         }
       }
+    }
+    linkTileGrid {
+      linkTile {
+        label
+        pagelink
+        image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(aspectRatio: 1, width: 200)
+            }
+          }
+          altText
         }
       }
     }
+  }
+}
   `)
+
   const home = data.wpPage.home
-  const image = getImage(home.bannerImage.localFile)
-  console.log(image)
+  
 return (    
   <Layout>
-
+    {console.log(data.wpPage.linkTileGrid.linkTile)}
   <section className="banner-wrap">
     <GatsbyImage
       className="feature-image"  
-      image={image}
+      image={ getImage(home.bannerImage.localFile) }
       alt={home.bannerImage.altText}
       width={home.bannerImage.width}
     />
@@ -56,7 +72,14 @@ return (
     </div>  
   </section>
 
+  <section className="link-tiles">
+    <LinkTileGrid
+      tileGrid={data.wpPage.linkTileGrid.linkTile}
+    />
+  </section>
+
   {/* <ContactForm/> */}
+  
   </Layout>
 )
 }

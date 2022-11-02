@@ -11,11 +11,12 @@ const Footer = () => (
                 </p>
                 <a href="https://ordinaryagency.com.au">
                     <StaticImage 
-                        width="150px" 
-                        height="50px" 
+                        width={150} 
+                        height={50} 
                         id="ordinaryLogo" 
                         src="../images/ordinary-branding.png"
                         objectFit="scale-down"
+                        alt="Ordinary agency logo"
                     />
                 </a>
             </div>

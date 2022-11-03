@@ -14,7 +14,7 @@ const LinkTileGrid = (props) => {
             style={{
                 display:'flex',
                 flexFlow:'row',
-                width:'100vw',
+                width:'100%',
                 height:'30vh',
                 boxSizing:'content-box',
                 justifyContent:'space-around',
@@ -22,7 +22,7 @@ const LinkTileGrid = (props) => {
              }}>
             
                 { 
-                tiles.map( (item,index) => (   
+                tiles.map( (item,index) => (      
 
                     <div 
                     className="tile"

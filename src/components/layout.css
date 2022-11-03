@@ -1,5 +1,9 @@
 /*Ordinary CSS */
 
+.body {
+  width: 100vw;
+}
+
 /* Header */
 
 .banner-wrap img {
@@ -10,7 +14,7 @@
 }
 div.header-wrap {
   background-color: whitesmoke;
-  height: 15vh;
+  height: 25vh;
   border-bottom: 4px solid #C7804C
 
 }
@@ -73,7 +77,8 @@ section.intro {
 }
 
 .intro .explain {
-  min-width: 40em;
+  min-width: 30em;
+  max-width: 100%;
   margin: 0 0 0 10em;
   order: 2;
   height: auto;

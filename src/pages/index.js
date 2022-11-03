@@ -72,10 +72,17 @@ return (
     </div>  
   </section>
 
-  <section className="link-tiles">
+  <section 
+  className="link-tiles"
+  style={{
+    padding: '5rem 0',
+    marginTop:'var(--space-5)'
+  }}
+  >
     <LinkTileGrid
       tileGrid={data.wpPage.linkTileGrid.linkTile}
-    />
+      />
+      
   </section>
 
   {/* <ContactForm/> */}
